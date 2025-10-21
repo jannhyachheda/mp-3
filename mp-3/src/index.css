@@ -1,0 +1,322 @@
+/* GOOGLE FONT + COLOR PALETTE */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --brown-900: #5b4031;
+  --brown-700: #7b5944;
+  --beige-100: #faf5ef;
+  --beige-300: #e9dfd4;
+  --pink-200: #f8e0e6;
+  --text-dark: #3b2c22;
+}
+
+/* BASE RESET - FIXED: Keep margin/padding on all screen sizes */
+* {
+  margin: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: calc(14px + 0.2vw);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--beige-100);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  background: var(--beige-300);
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  background: var(--brown-900);
+  color: #fff;
+  padding: 1.4rem 1.6rem;
+}
+
+header h1 {
+  font-size: calc(1.5rem + 0.9vw);
+  margin: 0;
+}
+
+header p {
+  font-size: calc(1rem + 0.25vw);
+  margin: 0.5rem 0 0 0;
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  background: var(--brown-700);
+  color: var(--beige-100);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: calc(0.9rem + 0.18vw);
+}
+
+footer a {
+  color: var(--pink-200);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* TWO-COLUMN LAYOUT */
+.page-flex {
+  display: flex;
+  width: 100%;
+}
+
+@media (max-width: 750px) {
+  .page-flex {
+    flex-direction: column;
+  }
+}
+
+/* NAV */
+nav.fixed-side {
+  flex: 0 0 260px;
+  background: var(--brown-900);
+}
+
+@media (max-width: 750px) {
+  nav.fixed-side {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* NAV LINKS */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  border-bottom: 1px solid var(--beige-300);
+}
+
+nav a {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--beige-100);
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+  background: var(--pink-200);
+  color: var(--text-dark);
+}
+
+@media (max-width: 750px) {
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  nav li {
+    flex: 1;
+    border-bottom: none;
+    border-right: 1px solid var(--beige-300);
+  }
+
+  nav li:last-child {
+    border-right: none;
+  }
+}
+
+/* MAIN CONTENT */
+main {
+  flex: 1;
+  padding: 2rem;
+  min-height: 100vh;
+  width: 100%;
+}
+
+@media (min-width: 1001px) {
+  main {
+    max-width: 70%;
+  }
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  margin-bottom: 1.2rem;
+  font-size: calc(1.3rem + 0.5vw);
+}
+
+h3 {
+  margin-bottom: 0.6rem;
+  font-size: calc(1.05rem + 0.35vw);
+}
+
+ul.bullets {
+  padding-left: 1.3rem;
+}
+
+ul.bullets li {
+  margin-bottom: 0.5rem;
+}
+
+/* REFERENCE CARDS */
+.ref-card {
+  background: var(--beige-100);
+  border-left: 6px solid var(--pink-200);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.6rem;
+  border-radius: 6px;
+}
+
+.ref-card em {
+  color: var(--brown-900);
+}
+
+/* CALCULATOR - FIXED: Proper spacing and layout */
+#calc-shell {
+  max-width: 500px;
+  margin: 2.5rem auto;
+  padding: 1.5rem;
+  border: 2px solid var(--brown-900);
+  border-radius: 8px;
+  background: var(--beige-100);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#calc-shell h3 {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+#calc-shell .row {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Input row - side by side */
+#calc-shell .input-row {
+  justify-content: space-between;
+}
+
+#calc-shell input {
+  width: 45%;
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--brown-700);
+  border-radius: 6px;
+  text-align: center;
+  background: #fff;
+}
+
+/* Button row - evenly spaced */
+#calc-shell .button-row {
+  justify-content: center;
+}
+
+#calc-shell button {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  font-size: 1.3rem;
+  background: var(--brown-700);
+  color: var(--beige-100);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#calc-shell button:hover {
+  background: var(--brown-900);
+}
+
+/* Clear button - full width */
+#calc-shell .clear-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+}
+
+/* Result display */
+#calc-shell h4 {
+  min-height: 3rem;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FIXED: Negative numbers display in RED */
+#calc-shell h4.neg {
+  color: red;
+}
+
+/* RESPONSIVE - Keep spacing on mobile */
+@media (max-width: 750px) {
+  header {
+    text-align: center;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  * {
+    margin: 5px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 500px) {
+  #calc-shell {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  #calc-shell input {
+    width: 48%;
+  }
+
+  #calc-shell button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+  }
+}
